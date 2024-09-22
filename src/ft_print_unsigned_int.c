@@ -1,4 +1,5 @@
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
+#include "../include/libft.h"
 #include <stdio.h>
 
 static int ft_count_unsigned_int_len(unsigned int num)
@@ -15,6 +16,7 @@ static int ft_count_unsigned_int_len(unsigned int num)
 		i++;
 	return(i);
 }
+
 int	ft_print_unsigned_int(unsigned int num)
 {
 	ft_putnbr_fd(num, 1);

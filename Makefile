@@ -1,37 +1,11 @@
-NAME	= ft_printf.a
-
-CC		= cc
-
-CFLAG	= -Wall -Wextra -Werror
-
+NAME = libftprintf.a
+INCLUDE = include
+LIBFT = libft
 SRC_DIR = src/
+OBJ_DIR = obj/
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -I
+RM = rm -f
+AR = ar rcs
 
-SRC	= ft_printf.c \
-			ft_print_char.c \
-			ft_print_str.c \
-			ft_print_nbr.c \
-			ft_print_int.c \
-			ft_print_unsigned_int.c \
-			ft_print_percent.c
-
-INCLUDE_DIR	= include
-
-OFILE		= $(SRC:.c=.o)
-
-all:		$(NAME)
-
-$(NAME):	$(OFILE)
-	ar rcs $(NAME) $(OFILE)
-
-%.o:	%.c
-	$(CC) $(CFLAG) -I $(INCLUDE) -c $< -o $@
-
-clean:
-	rm -fv $(OFILE)
-
-fclean:	clean
-	rm -fv $(NAME)
-
-re:		fclean all
-
-.PHONY:	all clean fclean re
+SRC = ft_print_char ft_print_int ft_print_nbr ft_print_percent ft_print_str ft_print_unsigned_int ft_printf
