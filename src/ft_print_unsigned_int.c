@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:21:08 by root              #+#    #+#             */
-/*   Updated: 2024/09/25 17:55:30 by root             ###   ########.fr       */
+/*   Updated: 2024/09/25 20:41:22 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int ft_count_len(unsigned int num)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (num >= 10)
 	{
 		i++;
@@ -28,19 +28,19 @@ static int ft_count_len(unsigned int num)
 }
 char *ft_uitoa(unsigned int num)
 {
-	int	i;
+	int	len;
 	char *str;
 
 	str = malloc((ft_count_len(num)) + 1 * sizeof(char));
 	if (!str)
 		return (NULL);
-	str[ft_count_len(num)] = '\0';
-	i = 1;
+	len = ft_count_len(num);
+	str[len] = '\0';
 	while (num != 0)
 	{
+		str[len - 1] = num % 10 + 48;
 		num = num / 10;
-		str[ft_count_len(num) - i] = num % 10;
-		i++;
+		len--;
 	}
 	return (str);
 }
@@ -48,9 +48,16 @@ char *ft_uitoa(unsigned int num)
 int	ft_print_unsigned(unsigned int num)
 {
 	char	*str;
+	int		len;
 
-	str = ft_uitoa(num);
-	ft_putstr_fd(str, 1);
-	free(str);
+	len = 0;
+	if (num == 0)
+		ft_putchar_fd('0', 1);
+	else
+	{
+		str = ft_uitoa(num);
+		ft_putstr_fd(str, 1);
+		free(str);
+	}
 	return (ft_count_len(num));
 }
