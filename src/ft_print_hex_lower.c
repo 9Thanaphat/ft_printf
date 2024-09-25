@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_hex_lower.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/25 21:03:42 by root              #+#    #+#             */
+/*   Updated: 2024/09/25 21:11:02 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft.h"
 
@@ -5,16 +17,16 @@ static int	ft_count_hex_len(unsigned int num)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (num >= 16)
 	{
 		i++;
 		num = num / 16;
 	}
-	return(i);
+	return (i);
 }
 
-void ft_put_hex(unsigned int num)
+void	ft_put_hex(unsigned int num)
 {
 	if (num >= 16)
 	{
@@ -29,12 +41,13 @@ void ft_put_hex(unsigned int num)
 			ft_putchar_fd((num - 10) + 97, 1);
 	}
 }
+
 int	ft_print_hex_lower(unsigned int num)
 {
 	if (num == 0)
 	{
 		ft_putchar_fd('0', 1);
-		return  (1);
+		return (1);
 	}
 	else
 		ft_put_hex(num);

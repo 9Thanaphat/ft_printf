@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:22:02 by root              #+#    #+#             */
-/*   Updated: 2024/09/25 18:09:27 by root             ###   ########.fr       */
+/*   Updated: 2024/09/25 21:08:22 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ int	ft_printf(const char *str, ...)
 {
 	int	i;
 	int	len;
-	va_list(args);
 
+	va_list(args);
 	i = 0;
 	len = 0;
 	va_start(args, str);
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == '%')
 		{

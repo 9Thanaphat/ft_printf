@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:21:08 by root              #+#    #+#             */
-/*   Updated: 2024/09/25 20:41:22 by root             ###   ########.fr       */
+/*   Updated: 2024/09/25 21:10:04 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-static int ft_count_len(unsigned int num)
+static int	ft_count_len(unsigned int num)
 {
 	int	i;
 
@@ -24,17 +24,20 @@ static int ft_count_len(unsigned int num)
 		i++;
 		num = num / 10;
 	}
-	return(i);
+	return (i);
 }
-char *ft_uitoa(unsigned int num)
-{
-	int	len;
-	char *str;
 
-	str = malloc((ft_count_len(num)) + 1 * sizeof(char));
+char	*ft_uitoa(unsigned int num)
+{
+	int		len;
+	char	*str;
+
+	if (num == 0)
+		return (ft_strdup("0"));
+	len = ft_count_len(num);
+	str = malloc(len + 1 * sizeof(char));
 	if (!str)
 		return (NULL);
-	len = ft_count_len(num);
 	str[len] = '\0';
 	while (num != 0)
 	{
