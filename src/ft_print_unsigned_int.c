@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:21:08 by root              #+#    #+#             */
-/*   Updated: 2024/09/25 17:41:28 by root             ###   ########.fr       */
+/*   Updated: 2024/09/25 17:55:30 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ char *ft_uitoa(unsigned int num)
 
 int	ft_print_unsigned(unsigned int num)
 {
-	ft_putnbr_fd(num, 1);
-	ft_putstr_fd(ft_uitoa(num), 1);
+	char	*str;
+
+	str = ft_uitoa(num);
+	ft_putstr_fd(str, 1);
+	free(str);
 	return (ft_count_len(num));
 }

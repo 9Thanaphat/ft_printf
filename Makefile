@@ -24,7 +24,7 @@ WHITE = \033[0;97m
 
 #Sources
 
-SRC_FILES	=	ft_print_char ft_print_int ft_print_nbr ft_print_percent ft_print_str ft_print_unsigned_int ft_printf
+SRC_FILES	=	ft_print_char ft_print_int ft_print_nbr ft_print_percent ft_print_ptr ft_print_str ft_print_unsigned_int ft_printf ft_print_hex_lower ft_print_hex_upper
 
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))

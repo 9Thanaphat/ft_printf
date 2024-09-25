@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:22:02 by root              #+#    #+#             */
-/*   Updated: 2024/09/25 17:22:03 by root             ###   ########.fr       */
+/*   Updated: 2024/09/25 18:09:27 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ int	ft_printf(const char *str, ...)
 	while(str[i])
 	{
 		if (str[i] == '%')
+		{
 			len += ft_check_format(args, str[i + 1]);
+			i++;
+		}
 		else
 		{
 			ft_putchar_fd(str[i], 1);
@@ -59,5 +62,6 @@ int	ft_printf(const char *str, ...)
 		}
 		i++;
 	}
+	va_end(args);
 	return (len);
 }

@@ -6,15 +6,14 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:21:16 by root              #+#    #+#             */
-/*   Updated: 2024/09/25 17:21:17 by root             ###   ########.fr       */
+/*   Updated: 2024/09/25 18:04:02 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
-int	ft_print_char(char c)
+int	ft_print_char(int c)
 {
-	ft_putchar_fd(c, 1);
+	write(1, &c, 1);
 	return (1);
 }

@@ -14,12 +14,12 @@ static int	ft_count_hex_len(unsigned int num)
 	return(i);
 }
 
-void ft_put_hex(unsigned int num)
+void ft_put_hex_upper(unsigned int num)
 {
 	if (num >= 16)
 	{
-		ft_put_hex(num / 16);
-		ft_put_hex(num % 16);
+		ft_put_hex_upper(num / 16);
+		ft_put_hex_upper(num % 16);
 	}
 	else
 	{
@@ -29,7 +29,7 @@ void ft_put_hex(unsigned int num)
 			ft_putchar_fd((num - 10) + 65, 1);
 	}
 }
-int	ft_print_hex_lower(unsigned int num)
+int	ft_print_hex_upper(unsigned int num)
 {
 	if (num == 0)
 	{
@@ -37,6 +37,6 @@ int	ft_print_hex_lower(unsigned int num)
 		return  (1);
 	}
 	else
-		ft_put_hex(num);
+		ft_put_hex_upper(num);
 	return (ft_count_hex_len(num));
 }
