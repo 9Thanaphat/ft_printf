@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:22:02 by root              #+#    #+#             */
-/*   Updated: 2024/09/25 21:08:22 by root             ###   ########.fr       */
+/*   Updated: 2024/09/27 21:53:03 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_check_format(va_list args, const char format)
 	else if (format == 'i')
 		len += ft_print_int(va_arg(args, int));
 	else if (format == 'u')
-		len += ft_print_unsigned(va_arg(args, unsigned int));
+		len += ft_print_unsigned_int(va_arg(args, unsigned int));
 	else if (format == 'x')
 		len += ft_print_hex_lower(va_arg(args, unsigned int));
 	else if (format == 'X')

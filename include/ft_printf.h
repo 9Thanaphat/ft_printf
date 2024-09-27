@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 21:06:20 by root              #+#    #+#             */
-/*   Updated: 2024/09/25 21:07:36 by root             ###   ########.fr       */
+/*   Updated: 2024/09/27 21:52:24 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_print_str(char *str);
 int	ft_print_ptr(unsigned long long ptr);
 int	ft_print_nbr(int num);
 int	ft_print_int(int num);
-int	ft_print_unsigned(unsigned int num);
+int	ft_print_unsigned_int(unsigned int num);
 int	ft_print_hex_lower(unsigned int num);
 int	ft_print_hex_upper(unsigned int num);
 int	ft_print_percent(void);
