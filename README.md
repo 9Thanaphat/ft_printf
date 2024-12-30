@@ -1,0 +1,1 @@
+"ft_printf" is a custom implementation of the standard C "printf" function. It replicates most of the functionality of "printf", including handling format specifiers and outputting formatted text to the standard output. This project is a common exercise to deepen understanding of variadic functions, string manipulation, and formatted I/O.
